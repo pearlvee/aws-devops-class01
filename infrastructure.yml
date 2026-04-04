@@ -24,6 +24,6 @@ Resources:
 Outputs:
   BucketName:
     Value: !Ref WebsiteBucket
-    BucketArn:
+  BucketArn:
     Description: "The ARN of the S3 Bucket"
     Value: !GetAtt WebsiteBucket.Arn
