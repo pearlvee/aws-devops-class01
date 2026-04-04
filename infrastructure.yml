@@ -13,7 +13,17 @@ Resources:
       BucketName: !Sub 'myapp-website-${Environment}-${AWS::AccountId}'
       WebsiteConfiguration:
         IndexDocument: index.html
+        Resources:
+  MyTestParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: /myapp/config/test-mode
+      Type: String
+      Value: "enabled
 
 Outputs:
   BucketName:
     Value: !Ref WebsiteBucket
+    BucketArn:
+    Description: "The ARN of the S3 Bucket"
+    Value: !GetAtt WebsiteBucket.Arn
