@@ -1,6 +1,6 @@
 Resources:
   WebsiteBucket:
-    Type: 'AWS::S3::Bucket'
+    Type 'AWS::S3::Bucket'
     Properties:
       # Using a very unique name to avoid any S3 conflicts
       BucketName: !Sub 'vivian-dev-site-${AWS::AccountId}-${AWS::Region}'
