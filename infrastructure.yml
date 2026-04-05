@@ -1,29 +1,22 @@
-AWSTemplateFormatVersion: '2010-09-09'
-Description: Simple S3 static website
-
-Parameters:
-  Environment:
-    Type: String
-    Default: development
-
 Resources:
   WebsiteBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: !Sub 'myapp-website-${Environment}-${AWS::AccountId}'
+      # Using a very unique name to avoid any S3 conflicts
+      BucketName: !Sub 'vivian-dev-site-${AWS::AccountId}-${AWS::Region}'
       WebsiteConfiguration:
         IndexDocument: index.html
 
   MyTestParameter:
-    Type: AWS::SSM::Parameter
+    Type: 'AWS::SSM::Parameter'
     Properties:
-      Name: /myapp/config/test-mode
-      Type: String
-      Value: "enabled"
+      Name: '/myapp/config/test-mode'
+      Type: 'String'
+      Value: 'enabled'
 
 Outputs:
   BucketName:
     Value: !Ref WebsiteBucket
   BucketArn:
     Description: "The ARN of the S3 Bucket"
-    Value: !GetAtt WebsiteBucket.Arngit
+    Value: !GetAtt WebsiteBucket.Arn
