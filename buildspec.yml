@@ -4,10 +4,28 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
+    commands:
+      - echo '=== Installing dependencies ==='
+      - npm ci
+  pre_build:
+    commands:
+      - echo '=== Running linter ==='
+      - npm run lint || echo 'Lint warnings found, continuing build'
   build:
     commands:
-      - echo Build started on `date`
-      - echo 'All tests passed (placeholder)'
+      - echo '=== Building application ==='
+      - npm run build
+  post_build:
+    commands:
+      - echo '=== Running smoke tests ==='
+      - node -e "require('./build/server.js'); console.log('Smoke test passed')"
+      - echo Build completed on `date`
+
 artifacts:
   files:
     - '**/*'
+  base-directory: build
+
+cache:
+  paths:
+    - 'node_modules/**/*'
