@@ -18,7 +18,7 @@ phases:
   post_build:
     commands:
       - echo '=== Running smoke tests ==='
-      - node -e "require('./build/src/server.js'); console.log('Smoke test passed')"
+      - node -e "require('./build/server.js'); console.log('Smoke test passed'); process.exit(0)"
       - echo Build completed on `date`
 
 artifacts:
