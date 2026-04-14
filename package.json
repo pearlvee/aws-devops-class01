@@ -8,7 +8,7 @@
     "test:smoke": "node -e \"console.log('smoke ok')\"",
     "test:coverage": "jest --coverage --coverageThreshold='{\"global\":{\"lines\":60,\"statements\":60,\"functions\":20,\"branches\":20}}'",
     "start": "node server.js",
-   "build": "cp index.html build/",
+   "build": "mkdir -p build && cp index.html build/",
     "lint": "echo No lint configured"
   },
   "keywords": [],
