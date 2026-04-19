@@ -13,7 +13,7 @@ phases:
       - npm run lint || echo 'Lint warnings found, continuing build'
   build:
     commands:
-   - echo '=== Building application ==='
+   - echo '=== Building application ===',
    - npm run build
   post_build:
     commands:
