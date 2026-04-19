@@ -8,7 +8,7 @@
     "test:smoke": "node -e \"console.log('smoke ok')\"",
     "test:coverage": "jest --coverage --coverageThreshold='{\"global\":{\"lines\":60,\"statements\":60,\"functions\":20,\"branches\":20}}'",
     "start": "node server.js",
-   "build": "mkdir -p build/public && cp -r src/* build/public/ && cp package.json src/server.js build/",
+    "build": "cp -r src build",
     "lint": "echo No lint configured"
   },
   "keywords": [],
@@ -21,5 +21,14 @@
   "devDependencies": {
     "jest": "^30.2.0",
     "supertest": "^7.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pearlvee/aws-devops-class01.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pearlvee/aws-devops-class01/issues"
+  },
+  "homepage": "https://github.com/pearlvee/aws-devops-class01#readme"
 }
