@@ -6,7 +6,7 @@ function createApp() {
   const app = express();
   
   // Serve static files from public directory
-  app.use(express.static('public'));
+  app.use(express.static(__dirname));
   
   // Route for home page
   app.get('/', (req, res) => {
