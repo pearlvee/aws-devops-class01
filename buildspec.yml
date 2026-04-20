@@ -9,12 +9,12 @@ phases:
       - npm install
   pre_build:
     commands:
-      - echo '=== Running linter ==='
-      - npm run lint || echo 'Lint warnings found, continuing build'
+      - npm test -- --coverage --coverageReporters=text
+      # Build fails here if coverage < 70%
   build:
     commands:
-      - echo '=== Building application ==='
-      - npm run build
+   - echo '=== Building application ===',
+   - npm run build
   post_build:
     commands:
       - echo '=== Running smoke tests ==='
