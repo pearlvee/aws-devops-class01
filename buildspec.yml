@@ -13,8 +13,8 @@ phases:
       # Build fails here if coverage < 70%
   build:
     commands:
-   - echo '=== Building application ===',
-   - npm run build
+      - echo '=== Building application ===',
+      - npm run build
   post_build:
     commands:
       - echo '=== Running smoke tests ==='
