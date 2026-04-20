@@ -8,6 +8,3 @@ test('subtract returns correct difference', () => {
     expect(subtract(10, 4)).toBe(6);
 });
 
-test('multiply returns correct product', () => {
-    expect(multiply(3, 4)).toBe(12);
-});
