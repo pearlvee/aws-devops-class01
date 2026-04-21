@@ -16,7 +16,7 @@ phases:
       - npm test -- --coverage --coverageReporters=text
   build:
     commands:
-      - echo "Building against API: $API_URL"
+      - echo "Building against API:$API_URL"
       - echo '=== Building application ==='
       - npm run build
   post_build:
