@@ -5,8 +5,8 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      # The --no-cache flag forces npm to go to the internet
-      - npm install --no-cache
+      - echo '=== Installing dependencies ==='
+      - npm install
   pre_build:
     commands:
       - npm test -- --coverage --coverageReporters=text
@@ -29,3 +29,4 @@ artifacts:
 cache:
   paths:
     - 'node_modules/**/*'
+    
