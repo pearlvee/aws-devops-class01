@@ -1,4 +1,7 @@
 version: 0.2
+env:
+  parameter-store:
+    API_URL: /myapp/development/api-url
 
 phases:
   install:
@@ -13,7 +16,7 @@ phases:
       # Build fails here if coverage < 70%
   build:
     commands:
-      - echo '=== Building application ===',
+      - echo "Building against API: $API_URL"
       - npm run build
   post_build:
     commands:
