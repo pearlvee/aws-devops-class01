@@ -1,1 +1,3 @@
-# aws-devops-class01
+# My DevOps Application
+![Build Status](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoieENFV1B4bU5QUzVBODZBY1V1enVDaUgreWMzaGlsWnZhSXhJMDNhYUwwRUMzWko2RXdFK1d2OUJkMGp6MFdQU1pLWnk0VTI0d1hkZHFJN1F5K3Y4MTVzPSIsIml2UGFyYW1ldGVyU3BlYyI6InYyVTFSaFg2QlFZMkZEV2wiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
+This application is deployed via AWS CodePipeline.
