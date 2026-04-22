@@ -11,6 +11,7 @@ phases:
     commands:
       - echo '=== Installing dependencies ==='
       - npm install
+      - npm audit fix
   pre_build:
     commands:
       - npm test -- --coverage --coverageReporters=text
