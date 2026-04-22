@@ -36,7 +36,7 @@ phases:
 artifacts:
   files:
     - '**/*'
-    - security-report.json
+    - ../security-report.json
   base-directory: build
   
 
