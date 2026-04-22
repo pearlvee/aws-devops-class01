@@ -14,6 +14,13 @@ phases:
   pre_build:
     commands:
       - npm test -- --coverage --coverageReporters=text
+      - echo '=== Running security audit ==='
+      - npm audit --audit-level=high
+        # Build fails here if high or critical vulnerabilities are found
+      - echo '=== Security audit passed ==='
+      - npm run lint
+      - npm audit --json > security-report.json || true
+      - npm audit --audit-level=high # this one actually fails the build
   build:
     commands:
       - echo "Building against API:$API_URL"
@@ -28,7 +35,9 @@ phases:
 artifacts:
   files:
     - '**/*'
+    - security-report.json
   base-directory: build
+  
 
 cache:
   paths:
