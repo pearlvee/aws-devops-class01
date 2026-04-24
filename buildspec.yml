@@ -31,6 +31,11 @@ phases:
       - node -e "require('./build/server.js'); console.log('Smoke test passed'); process.exit(0)"
       - echo "Build completed on $(date)"
       - cp security-report.json build/
+reports:
+  MyAppTestReport:
+    files:
+      - 'build/test-report.xml'
+    file-format: JUNITXML
 
 artifacts:
   files:
